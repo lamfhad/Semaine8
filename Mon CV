@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8">
+    <title>Mon CV</title>
+  </head>
+
+<body>
+  <header>
+    <h1>Martial Maccari</h1>
+    <h2>Développeur WEB</h2>
+  </header>
+
+<main>
+  <ul>
+    <h3>Mes formations</h3>
+    <li>2016/2017 : Formation développeur Web / Simplon.co </li>
+    <li>2002 : Licence Génie Mécanique et productique - Université Joseph Fourrier Grenoble</li>
+    <li>2000 : CPGE PSI - Lycée Vaugelas Chambéry</li>
+  </ul>
+  <ul>
+    <h3>Expérience professionnelle</h3>
+    <li>2007 - Aujourd'hui: Formateur informatique et production</li>
+    <li>2002-2007 : Formateur maintenance industrielle</li>
+    <li>Expérience 3</li>
+  </ul>
+</main>
+
+<footer>
+  <p>Mes coordonnées : 0609892610 / martial.maccari@hotmail.fr</p>
+</footer>
+</body>
+</html>
