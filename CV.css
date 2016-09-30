@@ -1,0 +1,27 @@
+header {
+	text-align : center;
+}
+
+body {
+	background-color : #FFFFA0;
+	font-family: calibri;
+}
+ul {
+	border : 3px solid black;
+	border-radius: 20px;
+	padding-bottom : 20px;
+}
+#XP {
+	border-color : blue;
+
+}
+
+li {
+	list-style-type : square;
+}
+
+footer {
+	background-color: blue;
+	color: white;
+	
+}
