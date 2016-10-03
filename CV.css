@@ -1,13 +1,17 @@
 header {
 	text-align : center;
+	background-image:url(images/dark_embroidery.png);
+	color:white;
+
 }
 
 body {
-	background-color : #FFFFA0;
 	font-family: calibri;
 }
 
-
+main{
+		background-image:url(images/cork-wallet.png);
+}
 
 .conteneur {
 	width:100%;
@@ -46,8 +50,9 @@ li {
 }
 
 footer {
-	background-color: gray;
+	background-image:url(images/soft_kill.png);
 	color: white;
+	
 	
 }
 
