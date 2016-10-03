@@ -6,22 +6,61 @@ body {
 	background-color : #FFFFA0;
 	font-family: calibri;
 }
+
+
+
+.conteneur {
+	width:100%;
+	max-width: 960px;
+	margin : 10px;
+	padding: 15px;
+}
+
+#Portrait {
+	width : 30%;
+	display: inline-block;
+	vertical-align:top;
+}
+
+.entete {
+	width:60%;
+	display:inline-block;
+}
+
+.colonne {
+	margin: 10px;
+	display:inline-block;
+	width: 25%;
+	vertical-align:top;
+	box-sizing:border-box;
+	
+}
 ul {
-	border : 3px solid black;
 	border-radius: 20px;
 	padding-bottom : 20px;
 }
-#XP {
-	border-color : blue;
 
-}
 
 li {
 	list-style-type : square;
 }
 
 footer {
-	background-color: blue;
+	background-color: gray;
 	color: white;
 	
+}
+
+footer p{
+text-align:center;
+width:30%;
+display:inline-block;
+vertical-align:top;
+margin-left:30px;
+}
+
+iframe{
+display:inline-block;
+vertical-align:top;
+width:50%;
 }
