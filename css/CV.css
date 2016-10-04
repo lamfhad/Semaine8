@@ -1,6 +1,6 @@
 header {
 	text-align : center;
-	background-image:url(images/dark_embroidery.png);
+	background-image:url(../images/dark_embroidery.png);
 	color:white;
 
 }
@@ -10,7 +10,7 @@ body {
 }
 
 main{
-		background-image:url(images/cork-wallet.png);
+		background-image:url(../images/cork-wallet.png);
 }
 
 .conteneur {
@@ -50,7 +50,7 @@ li {
 }
 
 footer {
-	background-image:url(images/soft_kill.png);
+	background-image:url(../images/soft_kill.png);
 	color: white;
 	
 	
