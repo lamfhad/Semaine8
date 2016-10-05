@@ -5,9 +5,9 @@
 	<link rel="stylesheet" href="css/cv.css" type="text/css">
 	<link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
 	<script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
-    	<script type="text/javascript" src="js/bootstrap.min.js"></script>
-   	<script type="text/javascript" src="js/jquery.easing.min.js"></script>
- 	<script type="text/javascript" src="js/jquery.mixitup.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/jquery.easing.min.js"></script>
+    <script type="text/javascript" src="js/jquery.mixitup.min.js"></script>
 	<script src="js/addheight.js"></script>
 	<script src="js/scrollmovement.js"></script>
 	
@@ -311,10 +311,25 @@
 	</main>
 <footer>
 	<section id="menu4">
-	<div class="container">
-		<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2709.6269100246495!2d-1.531863!3d47.223882!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4805eee82ca9537d%3A0x94d8a191bf498a3c!2s2+Avenue+du+Clipper%2C+44000+Nantes!5e0!3m2!1sfr!2sfr!4v1475523455417" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
-		<p>Mes coordonnées : 0609892610 / martial.maccari@hotmail.fr</p>
-	</div>
+		<div class="container">
+			<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2709.6269100246495!2d-1.531863!3d47.223882!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4805eee82ca9537d%3A0x94d8a191bf498a3c!2s2+Avenue+du+Clipper%2C+44000+Nantes!5e0!3m2!1sfr!2sfr!4v1475523455417" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+			<p>Mes coordonnées : 0609892610 / martial.maccari@hotmail.fr</p>
+		
+	
+		<fieldset>
+			<legend>Pour me contacter</legend>
+			<form method="post" action="Mon CV.html">
+				<label for="nom">Nom :</label>
+				<div class="Nom_Prenom">
+				<input type="texte" name="nom" placeholder="Nom" id="nom" />&nbsp;<input type="texte" name="prenom" placeholder="Prénom" id="prenom" />
+				<label for="email">Email :</label>
+				<input type="email" name="email" placeholder="email" id="email" />
+				<label for="Message" id="Message">Message :</label>
+				<textarea type="texte" name="message" placeholder="Votre message" rows="10" id="message"></textarea>
+				<input type="submit" value="Envoyer" id="Envoyer" />			
+			</form>
+		</fieldset>
+		</div>
 	</section>
 </footer>
 
