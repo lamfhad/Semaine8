@@ -3,11 +3,80 @@
 <head>
 	<meta charset="utf-8">
 	<link rel="stylesheet" href="css/cv.css" type="text/css">
-	<link rel="stylesheet" href="css/bootstrap.css" type="text/css">
+	<link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
+	<script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/jquery.easing.min.js"></script>
+    <script type="text/javascript" src="js/jquery.mixitup.min.js"></script>
+	<script src="js/addheight.js"></script>
+	<script src="js/scrollmovement.js"></script>
+	
+	 <script type="text/javascript">
+		$(function () {
+			var filterList = {
+				init: function () {
+				// Plugin Mixitup, qui permet de filtrer les vignettes par catégorie
+					$('#portfoliolist').mixitup({
+						targetSelector: '.portfolio',
+						filterSelector: '.filter',
+						effects: ['fade'],
+						easing: 'snap',
+						// call the hover effect
+						onMixEnd: filterList.hoverEffect()
+					});
+				},
+				
+				hoverEffect: function () {
+				// Fonction pour l'effet "hover"
+					$('#portfoliolist .portfolio').hover(
+						function () {
+							$(this).find('.label').stop().animate({bottom: 0}, 200, 'easeOutQuad');
+							$(this).find('img').stop().animate({top: -30}, 500, 'easeOutQuad');
+						},
+						function () {
+							$(this).find('.label').stop().animate({bottom: -40}, 200, 'easeInQuad');
+							$(this).find('img').stop().animate({top: 0}, 300, 'easeOutQuad');
+						}
+					);
+				}
+			};
+
+			// Lance les deux fonctions "hover" et "filtre"
+			filterList.init();
+		});
+</script>
+
 	<title>Mon CV</title>
 </head>
 <body>
+<div class="container-fluid">
+        <nav class="navbar navbar-default navbar-fixed-top">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" data-target=".navbar-collapse" data-toggle="collapse" class="navbar-toggle">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a href="#" class="navbar-brand">Martial MACCARI</a>
+                </div>
+                <div class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav">
+                        <li class="active"><a href="#menu1">Présentation</a>
+                        </li>
+                        <li><a href="#menu2">Parcours et Expérience</a>
+                        </li>
+                        <li><a href="#menu3">PortFolio</a>
+                        </li>
+						<li><a href="#menu4">Contact</a>
+                        </li>
+					</ul>
+                </div>
+            </div>
+        </nav>
+</div>
 	<header>
+		<section id="menu1">
 		<div class="container">
 			<img id="Portrait" src="https://pixabay.com/static/uploads/photo/2016/03/09/10/37/light-bulb-1246043_960_720.jpg" :>
 			<div class="entete">
@@ -15,8 +84,10 @@
 				<h2>Développeur WEB</h2>
 			</div>
 		</div>
+		</section>
 	</header>
 	<main>
+		<section id="menu2">
 		<div class="container">
 			<ul id="formations" class="colonne">
 				<h3>Mon parcours</h3>
@@ -35,12 +106,217 @@
 				<li>2001 : Stage bureau d'études COMITECH</li>
 			</ul>
 		</div>
+		</section>
+
+		<section id="menu3">
+			<div class="container">
+				<h3>PortFolio</h3>
+				<ul id="filters" class="clearfix row">
+					<li><span class="filter active" data-filter="cat1 cat2 cat3 cat4 cat5">Toutes mes catégories</span></li>
+					<li><span class="filter" data-filter="cat1">HTML/CSS</span></li>
+					<li><span class="filter" data-filter="cat2">Javascript</span></li>
+					<li><span class="filter" data-filter="cat3">Bootstrap</span></li>
+					<li><span class="filter" data-filter="cat4">Ruby</span></li>
+					<li><span class="filter" data-filter="cat5">Codecademy</span></li>
+				</ul>
+				
+				<div id="portfoliolist">
+				
+					<div class="portfolio  cat1 cat3 cat2" data-cat="cat1 cat2 cat3 cat2">
+						<div class="portfolio-wrapper">
+							<img src="images/portfolio/logos/mon_cv.png" />
+							<div class="label">
+								<div class="label-text">
+									<a class="text-title">CV en ligne</a>
+									<span class="text-category">Tout</span>
+								</div>
+								<div class="label-bg"></div>
+							</div>
+						</div>
+					</div>
+					
+					<div class="portfolio cat1" data-cat="cat1">
+						<div class="portfolio-wrapper">
+							<img src="images/portfolio/profil_simplon.png" />
+							<div class="label">
+								<div class="label-text">
+									<a class="text-title">Page de profil Simplon</a>
+									<span class="text-category">HTML/CSS</span>
+								</div>
+								<div class="label-bg"></div>
+							</div>
+						</div>
+					</div>
+					
+					<div class="portfolio cat5" data-cat="cat5">
+						<div class="portfolio-wrapper">
+							<img src="images/portfolio/logos/java_codecademy.png" />
+							<div class="label">
+								<div class="label-text">
+									<a class="text-title">Learn Java - 100%</a>
+									<span class="text-category">Codecademy</span>
+								</div>
+								<div class="label-bg"></div>
+							</div>
+						</div>
+					</div>
+					
+					<div class="portfolio cat5 cat1" data-cat="cat5 cat1">
+						<div class="portfolio-wrapper">
+							<img src="images/portfolio/logos/website.png" />
+							<div class="label">
+								<div class="label-text">
+									<a class="text-title">make a website - 100%</a>
+									<span class="text-category">Codecademy / HTML-CSS</span>
+								</div>
+								<div class="label-bg"></div>
+							</div>
+						</div>
+					</div>	
+					
+					<div class="portfolio cat5" data-cat="cat5">
+						<div class="portfolio-wrapper">
+							<img src="images/portfolio/logos/command.png" />
+							<div class="label">
+								<div class="label-text">
+									<a class="text-title">Learn Command Line - 100%</a>
+									<span class="text-category">Codecademy</span>
+								</div>
+								<div class="label-bg"></div>
+							</div>
+						</div>
+					</div>
+
+					<div class="portfolio cat5" data-cat="cat5">
+						<div class="portfolio-wrapper">
+							<img src="images/portfolio/logos/git.png" />
+							<div class="label">
+								<div class="label-text">
+									<a class="text-title">Learn Git - 100%</a>
+									<span class="text-category">Codecademy</span>
+								</div>
+								<div class="label-bg"></div>
+							</div>
+						</div>
+					</div>		
+					
+					<div class="portfolio cat5 cat1" data-cat="cat5 cat1">
+						<div class="portfolio-wrapper">
+							<img src="images/portfolio/logos/html.png" />
+							<div class="label">
+								<div class="label-text">
+									<a class="text-title">HTML/CSS- 100%</a>
+									<span class="text-category">Codecademy / HTML-CSS</span>
+								</div>
+								<div class="label-bg"></div>
+							</div>
+						</div>
+					</div>
+
+					<div class="portfolio cat5" data-cat="cat5">
+						<div class="portfolio-wrapper">
+							<img src="images/portfolio/logos/java_codecademy.png" />
+							<div class="label">
+								<div class="label-text">
+									<a class="text-title">Learn Java - 100%</a>
+									<span class="text-category">Codecademy</span>
+								</div>
+								<div class="label-bg"></div>
+							</div>
+						</div>
+					</div>
+
+					<div class="portfolio cat4" data-cat="cat4">
+						<div class="portfolio-wrapper">
+							<img src="images/portfolio/logos/openfoodfacts.png" />
+							<div class="label">
+								<div class="label-text">
+									<a class="text-title">API OpenfoodFacts</a>
+									<span class="text-category">Ruby</span>
+								</div>
+								<div class="label-bg"></div>
+							</div>
+						</div>
+					</div>
+					
+					<div class="portfolio cat5 cat2" data-cat="cat5 cat2">
+						<div class="portfolio-wrapper">
+							<img src="images/portfolio/logos/jquery.png" />
+							<div class="label">
+								<div class="label-text">
+									<a class="text-title">Learn jQuery - 100%</a>
+									<span class="text-category">Codecademy / Javascript</span>
+								</div>
+								<div class="label-bg"></div>
+							</div>
+						</div>
+					</div>
+
+					<div class="portfolio cat5 cat2" data-cat="cat5 cat2">
+						<div class="portfolio-wrapper">
+							<img src="images/portfolio/logos/js.png" />
+							<div class="label">
+								<div class="label-text">
+									<a class="text-title">Learn Javascript - 100%</a>
+									<span class="text-category">Codecademy</span>
+								</div>
+								<div class="label-bg"></div>
+							</div>
+						</div>
+					</div>
+
+					<div class="portfolio cat3" data-cat="cat3">
+						<div class="portfolio-wrapper">
+							<img src="images/portfolio/logos/exodivs.jpg" />
+							<div class="label">
+								<div class="label-text">
+									<a class="text-title">Divshot</a>
+									<span class="text-category">Bootstrap</span>
+								</div>
+								<div class="label-bg"></div>
+							</div>
+						</div>
+					</div>		
+					
+					<div class="portfolio cat5 cat4" data-cat="cat5 cat4">
+						<div class="portfolio-wrapper">
+							<img src="images/portfolio/logos/ruby.png" />
+							<div class="label">
+								<div class="label-text">
+									<a class="text-title">Ruby - 31%</a>
+									<span class="text-category">Codecademy / Ruby</span>
+								</div>
+								<div class="label-bg"></div>
+							</div>
+						</div>
+					</div>
+					
+					<div class="portfolio cat5" data-cat="cat5">
+						<div class="portfolio-wrapper">
+							<img src="images/portfolio/logos/sql.png" />
+							<div class="label">
+								<div class="label-text">
+									<a class="text-title">learn SQL - 100%</a>
+									<span class="text-category">Codecademy</span>
+								</div>
+								<div class="label-bg"></div>
+							</div>
+						</div>
+					</div>		
+		
+				</div>
+			</div>
+		</section>
+		
 	</main>
 <footer>
+	<section id="menu4">
 	<div class="container">
 		<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2709.6269100246495!2d-1.531863!3d47.223882!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4805eee82ca9537d%3A0x94d8a191bf498a3c!2s2+Avenue+du+Clipper%2C+44000+Nantes!5e0!3m2!1sfr!2sfr!4v1475523455417" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
 		<p>Mes coordonnées : 0609892610 / martial.maccari@hotmail.fr</p>
 	</div>
+	</section>
 </footer>
+
 </body>
 </html>
